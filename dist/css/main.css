@@ -1,1 +1,27 @@
-/*# sourceMappingURL=main.css.map */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 5%;
+  width: 100%;
+}
+.container .wrapper {
+  margin: auto;
+  padding: 2%;
+  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.4);
+  width: 650px;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 24px;
+  background-color: #00bdc0;
+  border-radius: 15px;
+}
+.container .wrapper__card {
+  background-color: #2a3d4a;
+  height: 135px;
+  border-radius: 10px;
+}/*# sourceMappingURL=main.css.map */
