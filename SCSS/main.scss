@@ -3,27 +3,79 @@
     margin: 0;
     box-sizing: border-box;
 }
-
-.container {
-    padding: 5%;
-    width: 100%;
-    .wrapper {
-        display: grid;
-        place-items: center;
-        // margin: auto;
-        padding: 2%;
-        box-shadow:15px 15px 15px rgba(0, 0, 0, 0.4);
-        width: 650px;
-        height: auto;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 24px;
-        background-color: #00bdc0;
-        border-radius: 15px;
-        &__card {
-            background-color: #2a3d4a;
-            height: 135px;
-            border-radius: 10px;
+// .hidden {
+//     visibility: hidden;
+// }
+// .container {
+//     padding: 10%;
+//     width: 100%;
+//     .wrapper {
+//         display: grid;
+//         // place-items: center;
+//         // margin: auto;
+//         padding: 2%;
+//         box-shadow:15px 15px 15px rgba(0, 0, 0, 0.4);
+//         width: 650px;
+//         height: auto;
+//         grid-template-columns: 1fr 1fr 1fr 1fr;
+//         gap: 24px;
+//         background-color: #00bdc0;
+//         border-radius: 15px;
+    // &__card {
+    //         background-color: #2a3d4a;
+    //         height: 135px;
+    //         width: 100px;
+    //         border-radius: 10px;
+    //         padding: 15%;
+    //         // position: relative;
+    //     img {
+    //         width: 100px;
+    //         height: 100px;
+    //         // display: none;
+    //     }
+    //     .front-face,
+    //     .back-face {
+    //         // position: absolute;
+    //         // width: 100%;
+    //         // height: 100%;
+    //         // background-color: #2a3d4a;
+    //     }
+    // }
+// }
+body {
+    height: 100vh;
+    display: flex;
+}
+.wrapper {
+    border: 2px solid lime;
+    width: 640px;
+    height: 640px;
+    display: flex;
+    margin: auto;
+    margin-left: 0;
+    margin-right: 0;
+    flex-wrap: wrap;
+    &__card{
+        border: 2px solid blue;
+        width: calc(25% - 10px);
+        height: calc(33.333% - 10px);
+        position: relative;
+        margin: 5px;
+        transform: scale(1);  //efects the transform when clicked
+        &:active { //triggered whenever any item in wrapper__card is clicked
+            transform: scale(.97%);
+            transition: transform .2s; //transitions the card when clicked
+        }
+        .front-face,
+        .back-face {
+            border: 2px solid pink;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            img{
+                width: 100px;
+                height: 100px;
+            }
         }
     }
 }
-
