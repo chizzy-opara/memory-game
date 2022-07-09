@@ -4,42 +4,53 @@
   box-sizing: border-box;
 }
 
-body {
-  height: 100vh;
-  display: flex;
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  padding: 10%;
+  width: 100%;
+  background-color: #bbc7c9;
 }
 
 .wrapper {
-  border: 2px solid lime;
-  width: 640px;
-  height: 640px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: space-between;
+  background-color: #bbc7c9;
   margin: auto;
-  margin-left: 0;
-  margin-right: 0;
-  flex-wrap: wrap;
+  width: 542px;
+  height: 503px;
 }
 .wrapper__card {
-  border: 2px solid blue;
-  width: calc(25% - 10px);
-  height: calc(33.333% - 10px);
+  background-color: #2a3d4a;
+  height: 114px;
+  width: 118px;
+  border-radius: 10px;
+  margin: auto;
+  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.4);
   position: relative;
-  margin: 5px;
   transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
 }
 .wrapper__card:active {
-  transform: scale(0.97%);
+  transform: scale(0.97);
   transition: transform 0.2s;
 }
 .wrapper__card .front-face,
 .wrapper__card .back-face {
-  border: 2px solid pink;
-  width: 100px;
-  height: 100px;
   position: absolute;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-radius: 10px;
 }
-.wrapper__card .front-face img,
-.wrapper__card .back-face img {
-  width: 100px;
-  height: 100px;
+.wrapper__card .back-face {
+  transform: rotateY(180deg);
+}
+
+.wrapper__card.flip {
+  transform: rotateY(180deg);
 }/*# sourceMappingURL=main.css.map */
