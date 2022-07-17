@@ -3,105 +3,106 @@
     margin: 0;
     box-sizing: border-box;
 }
-img {
+body {
+    background-color: #eae8e8;
+    @media only screen and (max-width: 680px) {
+        height: auto;
+    }
+}
+img { 
     width: 100%;
     height: 100%;
-    // display: none;
+    object-fit: cover;
+}
+.game {
+    display: flex;
+    // flex-wrap: wrap;
+    width: 100%;
+    @media only screen and (max-width: 680px) {
+        display: block;
+        width: unset;
+    }
+    .moves {
+        // margin-top: 32px;
+        font-size: 41px;
+        padding: 0 5%;
+        color: rgb(43, 41, 41);
+        width: 39%;
+        margin: auto;
+        @media only screen and (max-width: 680px) {
+            font-size: 24px;
+            margin: 24px 0;
+            padding: 0 5%;
+            width: 100%;
+            // margin: unset;
+        }
+        p {
+            margin-top: 48px;
+            @media only screen and (max-width: 680px) {
+                margin-top: unset;
+            }
+        }
+        #moves {
+            font-weight: 900;
+            @media only screen and (max-width: 680px) {
+                    font-size: 24px;
+            }
+        }
+    }
 }
 
-// .hidden {
-//     visibility: hidden;
-// }
-// .container {
-//     padding: 10%;
-//     width: 100%;
-//     .wrapper {
-//         display: grid;
-//         // place-items: center;
-//         // margin: auto;
-//         padding: 2%;
-//         box-shadow:15px 15px 15px rgba(0, 0, 0, 0.4);
-//         width: 650px;
-//         height: auto;
-//         grid-template-columns: 1fr 1fr 1fr 1fr;
-//         gap: 24px;
-//         background-color: #00bdc0;
-//         border-radius: 15px;
-    // &__card {
-    //         background-color: #2a3d4a;
-    //         height: 135px;
-    //         width: 100px;
-    //         border-radius: 10px;
-    //         padding: 15%;
-    //         // position: relative;
-    //     img {
-    //         width: 100px;
-    //         height: 100px;
-    //         // display: none;
-    //     }
-    //     .front-face,
-    //     .back-face {
-    //         // position: absolute;
-    //         // width: 100%;
-    //         // height: 100%;
-    //         // background-color: #2a3d4a;
-    //     }
-    // }
-// }
-body {
-    // height: 100vh;
-    // display: flex;
+.desc {
+    // color: teal;
+    font-weight: 700;
+    h2 {
+        background-color: rgb(87, 87, 118);
+        color: whitesmoke;
+        padding: 20px;
+        @media only screen and (max-width: 680px) {
+            padding: 18px;
+        }
+    }
 }
+
 .container {
-    padding: 10%;
-    width: 100%;
-    // height: 100vh;
-    background-color: #bbc7c9;
+    // padding: 10%;
+    width: 61%;
+    margin-top: 10%;
+    background-color: #eae8e8;
+    @media only screen and (max-width: 680px) {
+        padding: 0 5% 5% 5%;
+        height: 100vh;
+        margin-top: unset;
+        width: 100%;
+    }
 }
 .wrapper {
     display: grid;
-    // place-items: center;
-    // margin: auto;
-    // padding: 2%;
-    // box-shadow:15px 15px 15px rgba(0, 0, 0, 0.4);
-    // width: 650px;
-    // height: px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: space-between;
-    // gap: 24px;
-    background-color: #bbc7c9;
-    // border-radius: 15px;
+    // background-color: teal;
     margin: auto;
-
-
-
-    // border: 2px solid lime;
     width: 542px;
     height: 503px;
-    // display: flex;
-    // flex-wrap: wrap;
-    // perspective: 1000px;
+    box-shadow:15px 15px 15px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    @media screen and (max-width: 680px) {
+        width: 100%;
+        height: 61%;
+        // margin-top: 70px;
+    }
     &__card{
-        background-color: #2a3d4a;
+        background-color: rgb(114, 114, 138);
         height: 114px;
         width: 118px;
+        @media screen and (max-width: 680px) {
+            height: 76%;
+            width: 89%;
+        }
         border-radius: 10px;
         margin: auto;
-       box-shadow:15px 15px 15px rgba(0, 0, 0, 0.4);
-
-        // padding: 15%;
-        // position: relative;
-
-
-
-
-        // border: 2px solid blue;
-        // width: calc(25% - 10px);
-        // height: calc(33.333% - 10px);
-        // width: calc(25% - 10px);
-        // height: calc(20% - 60px);
+        box-shadow:15px 15px 15px rgba(0, 0, 0, 0.4);
         position: relative;
-        // margin: 10px;
         transform: scale(1);  //efects the transform when clicked
         transform-style: preserve-3d;
         transition: transform .5s; // effect the 3d transform style
@@ -111,16 +112,9 @@ body {
         }
         .front-face,
         .back-face {
-            // border: 2px solid pink;
-            // width: 100px;
-            // height: 100px;
             position: absolute;
             backface-visibility: hidden;
             border-radius: 10px;
-            // img{
-            //     width: 100px;
-            //     height: 100px;
-            // }
         }
         .back-face {
             transform: rotateY(180deg);

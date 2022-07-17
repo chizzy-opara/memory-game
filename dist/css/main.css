@@ -4,28 +4,110 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #eae8e8;
+}
+@media only screen and (max-width: 680px) {
+  body {
+    height: auto;
+  }
+}
+
 img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.game {
+  display: flex;
+  width: 100%;
+}
+@media only screen and (max-width: 680px) {
+  .game {
+    display: block;
+    width: unset;
+  }
+}
+.game .moves {
+  font-size: 41px;
+  padding: 0 5%;
+  color: rgb(43, 41, 41);
+  width: 39%;
+  margin: auto;
+}
+@media only screen and (max-width: 680px) {
+  .game .moves {
+    font-size: 24px;
+    margin: 24px 0;
+    padding: 0 5%;
+    width: 100%;
+  }
+}
+.game .moves p {
+  margin-top: 48px;
+}
+@media only screen and (max-width: 680px) {
+  .game .moves p {
+    margin-top: unset;
+  }
+}
+.game .moves #moves {
+  font-weight: 900;
+}
+@media only screen and (max-width: 680px) {
+  .game .moves #moves {
+    font-size: 24px;
+  }
+}
+
+.desc {
+  font-weight: 700;
+}
+.desc h2 {
+  background-color: rgb(87, 87, 118);
+  color: whitesmoke;
+  padding: 20px;
+}
+@media only screen and (max-width: 680px) {
+  .desc h2 {
+    padding: 18px;
+  }
 }
 
 .container {
-  padding: 10%;
-  width: 100%;
-  background-color: #bbc7c9;
+  width: 61%;
+  margin-top: 10%;
+  background-color: #eae8e8;
+}
+@media only screen and (max-width: 680px) {
+  .container {
+    padding: 0 5% 5% 5%;
+    height: 100vh;
+    margin-top: unset;
+    width: 100%;
+  }
 }
 
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: space-between;
-  background-color: #bbc7c9;
   margin: auto;
   width: 542px;
   height: 503px;
+  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+@media screen and (max-width: 680px) {
+  .wrapper {
+    width: 100%;
+    height: 61%;
+  }
 }
 .wrapper__card {
-  background-color: #2a3d4a;
+  background-color: rgb(114, 114, 138);
   height: 114px;
   width: 118px;
   border-radius: 10px;
@@ -35,6 +117,12 @@ img {
   transform: scale(1);
   transform-style: preserve-3d;
   transition: transform 0.5s;
+}
+@media screen and (max-width: 680px) {
+  .wrapper__card {
+    height: 76%;
+    width: 89%;
+  }
 }
 .wrapper__card:active {
   transform: scale(0.97);
