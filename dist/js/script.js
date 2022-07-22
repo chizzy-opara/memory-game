@@ -26,6 +26,23 @@ let maxCombos = 8;
 let initialMove = 0;
 let totalMoves = 18;
 let remMoves = totalMoves;
+let remMatches = maxCombos - combosFound;
+
+
+let lose = document.getElementById("lose");
+// Get the modal
+let modal = document.getElementById("win");
+
+// Get the button that opens the modal
+let btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+let span = document.getElementsByClassName("close")[0];
+const movesEl = document.querySelector('#moves');
+const match = document.querySelector('#match');
+
+movesEl.innerHTML = remMoves
+match.innerHTML = remMatches
 
 function reshuffleCards () {
     imageList.sort(() => Math.random() - 0.5)
@@ -36,8 +53,6 @@ function reshuffleCards () {
 }
 
 function flipCard() {  //flipcard function
-    if (remMoves === 0) 
-        return alert('GAME OVER');
     if (lockBoard) return;
     if (this === firstCard) return;
 
@@ -53,17 +68,38 @@ function flipCard() {  //flipcard function
         firstCard = this;
         return;
     }
-        //second click
-        hasFlippedCard = false;
-        secondCard = this;
+    //second click
+    hasFlippedCard = false;
+    secondCard = this;
 
-        initialMove++;
-        remMoves--;
-        const movesEl = document.querySelector('#moves');
-        movesEl.innerHTML = remMoves;
+    initialMove++;
+    remMoves--;
+    movesEl.innerHTML = remMoves;
 
-        // do cards match?
-        checkForMatch();
+    // do cards match?
+    checkForMatch();
+
+    if (remMoves < 1) {
+        setTimeout( function() {
+            lose.style.display = "block";
+        }, 1000);
+        window.onclick = function(event) {
+            if (event.target == lose) {
+                lose.style.display = "none";
+                window.location = ''
+            }
+        }
+                
+        lose.querySelector('.close').onclick = function() {
+            lose.style.display = "none";
+            window.location = ''
+        }
+                
+        lose.querySelector('#play-again').onclick = function() {
+            lose.style.display = "none";
+            window.location = ''
+        }
+    }
 }
 
 function checkForMatch() {
@@ -76,11 +112,30 @@ function checkForMatch() {
     if (cardMatch) {
         combosFound ++;
         if (combosFound === maxCombos) {
-            alert('YOU WIN');
+            // PLAYER HAS WON
+
+            // When the user clicks on the button, open the modal
+            modal.style.display = "block";
+            
+             // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+            
         } else {
-            let remMatches = maxCombos - combosFound
+            // decrement remaining matches to win
+            // let remMatches = maxCombos - combosFound;
+            remMatches-- ;
             setTimeout(() => {
-                alert(`${remMatches} matches to win!`)
+                match.innerHTML = remMatches;
+                // alert(`${remMatches} matches to win!`)
             }, 300);    
         }
     }
@@ -115,6 +170,7 @@ function winBoard() {
 function resetBoard() {
     [hasFlippedCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
+    // reshuffleCards();
 }
 reshuffleCards();
 

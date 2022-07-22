@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>memory-game</title>
+</head>
+<body>
+    <div class="desc">
+        <h2>MEMORY GAME</h2>
+        <a href="index.html" class="home ">Home</a>
+    </div>
+    <div class="game">
+        <div class="moves">
+            <span>Total Moves allowed : <b>18</b> moves</span>
+            <p>Moves Remaining : <span id="moves">18</span></p>
+            <span id="match">8</span> Matches to win
+        </div>
+    
+        <div class="container">
+            <div class="wrapper">
+                <div class="wrapper__card" data-framework="one">
+                    <div class="front-face"></div>
+                    <!-- <img src="assets/tryme.jpg" alt="tryme" class="front-face"> -->
+                    <img class="back-face" src="assets/shaggi.webp" alt="">
+                </div>
+                <div class="wrapper__card" data-framework="one">
+                    <div class="front-face"></div>
+                    <!-- <img src="assets/tryme.jpg" alt="tryme" class="front-face"> -->
+                    <img class="back-face" src="assets/shaggi.webp" alt="">
+                </div>
+
+    
+                <div class="wrapper__card" data-framework="two">
+                    <div class="front-face"></div>
+                    <!-- <img src="assets/tryme.jpg" alt="tryme" class="front-face"> -->
+                    <img class="back-face" src="assets/sabinus.webp" alt="">
+                </div>
+                <div class="wrapper__card" data-framework="two">
+                    <div class="front-face"></div>
+                    <!-- <img src="assets/tryme.jpg" alt="tryme" class="front-face"> -->
+                    <img class="back-face" src="assets/sabinus.webp" alt="">
+                </div>
+    
+                <div class="wrapper__card" data-framework="three">
+                    <div class="front-face"></div>
+                    <!-- <img src="assets/tryme.jpg" alt="tryme" class="front-face"> -->
+                    <img class="back-face" src="assets/davido.jpeg" alt="">
+                </div>
+                <div class="wrapper__card" data-framework="three">
+                    <div class="front-face"></div>
+                    <!-- <img src="assets/tryme.jpg" alt="tryme" class="front-face"> -->
+                    <img class="back-face" src="assets/davido.jpeg" alt="">
+                </div>
+
+                <div class="wrapper__card" data-framework="four">
+                    <div class="front-face"></div>
+                    <!-- <img src="assets/tryme.jpg" alt="tryme" class="front-face"> -->
+                    <img class="back-face" src="assets/cuppy.png" alt="">
+                </div>
+                <div class="wrapper__card" data-framework="four">
+                    <div class="front-face"></div>
+                    <!-- <img src="assets/tryme.jpg" alt="tryme" class="front-face"> -->
+                    <img class="back-face" src="assets/cuppy.png" alt="">
+                </div>
+    
+                <div class="wrapper__card" data-framework="five">
+                    <div class="front-face"></div>
+                    <!-- <img src="assets/tryme.jpg" alt="tryme" class="front-face"> -->
+                    <img class="back-face" src="assets/idibia.jpg" alt="">
+                </div>
+                <div class="wrapper__card" data-framework="five">
+                    <div class="front-face"></div>
+                    <!-- <img src="assets/tryme.jpg" alt="tryme" class="front-face"> -->
+                    <img class="back-face" src="assets/idibia.jpg" alt="">
+                </div>
+
+                <div class="wrapper__card" data-framework="six">
+                    <div class="front-face"></div>
+                    <!-- <img src="assets/tryme.jpg" alt="tryme" class="front-face"> -->
+                    <img class="back-face" src="assets/dija.jpg" alt="">
+                </div>
+                <div class="wrapper__card" data-framework="six">
+                    <div class="front-face"></div>
+                    <!-- <img src="assets/tryme.jpg" alt="tryme" class="front-face"> -->
+                    <img class="back-face" src="assets/dija.jpg" alt="">
+                </div>
+    
+                <div class="wrapper__card" data-framework="seven">
+                    <div class="front-face"></div>
+                    <!-- <img src="assets/tryme.jpg" alt="tryme" class="front-face"> -->
+                    <img class="back-face" src="assets/tiwa.jpg" alt="">
+                </div>
+                <div class="wrapper__card" data-framework="seven">
+                    <div class="front-face"></div>
+                    <!-- <img src="assets/tryme.jpg" alt="tryme" class="front-face"> -->
+                    <img class="back-face" src="assets/tiwa.jpg" alt="">
+                </div>
+
+                <div class="wrapper__card" data-framework="eight">
+                    <div class="front-face"></div>
+                    <!-- <img src="assets/tryme.jpg" alt="tryme" class="front-face"> -->
+                    <img class="back-face" src="assets/james.webp" alt="">
+                </div>
+                <div class="wrapper__card" data-framework="eight">
+                    <div class="front-face"></div>
+                    <!-- <img src="assets/tryme.jpg" alt="tryme" class="front-face"> -->
+                    <img class="back-face" src="assets/james.webp" alt="">
+                </div>
+            </div>
+
+
+
+             <!-- Trigger/Open The Modal -->
+            <!-- <button id="myBtn">Open Modal</button> -->
+
+            <!-- The Modal -->
+            <div id="win" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>EXCELLENT!!<br /><br />YOU WIN</h2>
+            </div>
+            </div>
+
+            <div id="lose" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>OH NO!!<br /><br />YOU lose<br /><br />GAME OVER</h2>
+                    <button id="play-again">Play again</button>
+                </div>
+            </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div> 
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
